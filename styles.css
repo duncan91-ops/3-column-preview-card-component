@@ -1,0 +1,128 @@
+/* font-family: 'Big Shoulders Display', cursive; */
+/* font-family: 'Lexend Deca', sans-serif; */
+
+:root {
+  --primaryBrightOrange: hsl(31, 77%, 52%);
+  --primaryDarkCyan: hsl(184, 100%, 22%);
+  --primaryVeryDarkCyan: hsl(179, 100%, 13%);
+  --primaryTransparentWhite: hsla(0, 0%, 100%, 0.75);
+  --primaryLightGray: hsl(0, 0%, 95%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.5rem;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--primaryLightGray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  width: 33rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, min-content);
+  row-gap: 3rem;
+  padding: 5rem;
+}
+
+.sedans {
+  background-color: var(--primaryBrightOrange);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.suvs {
+  background-color: var(--primaryDarkCyan);
+}
+
+.luxury {
+  background-color: var(--primaryVeryDarkCyan);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  color: var(--primaryLightGray);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.card__text {
+  color: var(--primaryTransparentWhite);
+  line-height: 1.6;
+}
+
+.card__btn {
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  border: 0;
+  background-color: var(--primaryLightGray);
+  border: 1px solid var(--primaryLightGray);
+}
+
+.card__btn:hover {
+  background-color: transparent;
+  color: var(--primaryLightGray);
+}
+
+.sedan__btn {
+  color: var(--primaryBrightOrange);
+}
+
+.suv__btn {
+  color: var(--primaryDarkCyan);
+}
+
+.luxury__btn {
+  color: var(--primaryVeryDarkCyan);
+}
+
+@media screen and (min-width: 1025px) {
+  .cards {
+    min-width: 100rem;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sedans {
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .luxury {
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .btn-container {
+    padding-top: 5rem;
+  }
+}
